@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         Jira Align CSS Hacks
 // @namespace    http://xiaan.com/
-// @version      0.1
+// @version      0.2
 // @description  Usability improvements for Jira Align
 // @author       xiaan
 // @copyright    2020, Christiaan van Woudenberg
 // @license      MIT
 // @match        *://maxar.agilecraft.com/*
+// @match        *://maxar.jiraalign.com/*
 // @grant        GM_addStyle
 // @run-at       document-start
 // ==/UserScript==
