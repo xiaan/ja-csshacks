@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Jira Align CSS Hacks
 // @namespace    http://xiaan.com/
-// @version      0.3
+// @version      0.31
 // @description  Usability improvements for Jira Align
 // @author       xiaan
 // @copyright    2021, Christiaan van Woudenberg
@@ -42,6 +42,6 @@
     // Undo the horrible new tag coloring
     GM_addStyle('td.tags.grid-tag { padding:0!important; }')
     GM_addStyle('.grid-tag div[title=""] { display:none; }')
-    GM_addStyle('.grid-tag .tag-view { background-color:unset!important; color:unset; float:unset; font-size:unset!important; font-weight:unset; margin:unset; min-width:unset; max-width:unset; padding:0 4px 0 4px; text-align:unset; overflow:unset; -webkit-border-radius:unset; }')
+    GM_addStyle('.grid-tag .tag-view { float:unset; font-size:unset!important; font-weight:unset; margin:unset; min-width:unset; max-width:unset; padding:0 4px 0 4px; text-align:unset; overflow:unset; -webkit-border-radius:unset; }')
 
 })();
