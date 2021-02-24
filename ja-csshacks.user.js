@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Jira Align CSS Hacks
 // @namespace    http://xiaan.com/
-// @version      0.2
+// @version      0.3
 // @description  Usability improvements for Jira Align
 // @author       xiaan
-// @copyright    2020, Christiaan van Woudenberg
+// @copyright    2021, Christiaan van Woudenberg
 // @license      MIT
 // @match        *://maxar.agilecraft.com/*
 // @match        *://maxar.jiraalign.com/*
@@ -20,7 +20,7 @@
 
     // Make feature grid more compact, unhide column data
     GM_addStyle('.new-table .Generic, .new-table .GenericCenter, .new-table .GenericExpanded, .new-table .HeadSortC, .new-table .HeadSortDesc, .new-table .HeadSortL, .new-table .acceptancegridacowner, .new-table .acceptancegridautomation, .new-table .acceptancegridid, .new-table .acceptancegriditeration, .new-table .acceptancegridname, .new-table .acceptancegridowner, .new-table .acceptancegridstatus, .new-table .acceptancegridstory, .new-table .acceptancegridwarningiconsmall, .new-table .blocked, .new-table .blockerchat, .new-table .blockercreatedate, .new-table .blockername, .new-table .blockerowner, .new-table .blockerpriority, .new-table .blockerrelease, .new-table .blockerstatus, .new-table .blockerstory, .new-table .chat, .new-table .default, .new-table .defectsgridfixedin, .new-table .defectsgridfoundby, .new-table .defectsgridfoundon, .new-table .defectsgridid, .new-table .defectsgridname, .new-table .defectsgridpriority, .new-table .defectsgridseverity, .new-table .defectsgridstate, .new-table .defectsgridstatus, .new-table .defectsgridstory, .new-table .defectsgridwarningiconsmall, .new-table .description, .new-table .extId, .new-table .externalId, .new-table .global-padding, .new-table .griddriver, .new-table .gridest, .new-table .gridheader, .new-table .gridheader_select, .new-table .gridheaderleft, .new-table .gridparent, .new-table .gridpriority, .new-table .gridrowrightsidetext, .new-table .gridstatus, .new-table .health, .new-table .icon-small, .new-table .id, .new-table .iteration, .new-table .milestoneactiongridcreatedate, .new-table .milestoneactiongridname, .new-table .milestoneactiongridowner, .new-table .milestoneactiongridrelease, .new-table .milestoneactiongridstatus, .new-table .milestonegridblocked, .new-table .milestonegridid, .new-table .milestonegriditeration, .new-table .milestonegridname, .new-table .milestonegridprogram, .new-table .milestonegridrelease, .new-table .milestonegridstate, .new-table .milestonegridteam, .new-table .milestonegridtier, .new-table .number, .new-table .object-items, .new-table .object-name, .new-table .owner, .new-table .portfoliodescription, .new-table .portfolioname, .new-table .portfolioparentorg, .new-table .portfoliprocess, .new-table .priority, .new-table .programgroup, .new-table .projectgridbegindate, .new-table .projectgridenddate, .new-table .projectgridid, .new-table .projectgridplanningcycle, .new-table .projectgridreleasenumber, .new-table .projectgridstatus, .new-table .projectgridtestsuite, .new-table .qaStoryState, .new-table .release, .new-table .release-vehicles, .new-table .sel, .new-table .shortname, .new-table .sort, .new-table .state, .new-table .status, .new-table .storymapgriddescription, .new-table .storymapgridname, .new-table .storymapgridrelease, .new-table .storymapgridtier, .new-table .storymapgridviewmap, .new-table .storymapgridwarningiconsmall, .new-table .taskstoryName, .new-table .team, .new-table .teamdescription, .new-table .teamleads, .new-table .teamname, .new-table .tests, .new-table .title, .new-table .title2, .new-table .trace, .new-table .type, .new-table .weeks, .new-table th { padding: 4px 8px!important }')
-    GM_addStyle('.new-table .blockername, .new-table .milestoneactiongridname, .new-table .milestonegridname, .new-table .projectgridplanningcycle, .new-table .storymapgridname, .new-table .title, .new-table .title2 { max-width: none; width: auto; }')
+    GM_addStyle('.new-table .blockername, .new-table .milestoneactiongridname, .new-table .milestonegridname, .new-table .projectgridplanningcycle, .new-table .storymapgridname, .new-table .title, .new-table .title2, .grid-tag { max-width: none; width: auto; }')
     GM_addStyle('.new-table .Generic { max-width: none!important; width:auto; }')
     GM_addStyle('.new-table .sel, .new-table .warningIconSmall { width:20px!important; }')
     GM_addStyle('.new-table .HeadSortC font { display:inline-block; max-width:50px; overflow:hidden; text-overflow: ellipsis; }')
@@ -38,4 +38,10 @@
     GM_addStyle('.tr-kanban-img, .teamroom-container .sprint-board-container .sprint-board .sprint-board-row .sprint-board-card .cardText .actions-button { margin: 0 0 0 -25px; }')
     GM_addStyle('.teamroom-container .sprint-board-container .card-data { margin: 48px 0 0 -25px; }')
     GM_addStyle('.cardText { height:100px!important; }')
+
+    // Undo the horrible new tag coloring
+    GM_addStyle('td.tags.grid-tag { padding:0!important; }')
+    GM_addStyle('.grid-tag div[title=""] { display:none; }')
+    GM_addStyle('.grid-tag .tag-view { background-color:unset!important; color:unset; float:unset; font-size:unset!important; font-weight:unset; margin:unset; min-width:unset; max-width:unset; padding:0 4px 0 4px; text-align:unset; overflow:unset; -webkit-border-radius:unset; }')
+
 })();
