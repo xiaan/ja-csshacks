@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Jira Align CSS Hacks
 // @namespace    http://xiaan.com/
-// @version      0.31
+// @version      0.4
 // @description  Usability improvements for Jira Align
 // @author       xiaan
 // @copyright    2021, Christiaan van Woudenberg
@@ -43,5 +43,20 @@
     GM_addStyle('td.tags.grid-tag { padding:0!important; }')
     GM_addStyle('.grid-tag div[title=""] { display:none; }')
     GM_addStyle('.grid-tag .tag-view { float:unset; font-size:unset!important; font-weight:unset; margin:unset; min-width:unset; max-width:unset; padding:0 4px 0 4px; text-align:unset; overflow:unset; -webkit-border-radius:unset; }')
+
+
+    // Make it easier to view features and edit descriptions
+    GM_addStyle('.slide-out-panel { width:995px; }')
+    GM_addStyle('.right-panel-wrapper { min-width:990px; }')
+    GM_addStyle('.first-content-table { width:960px; }')
+    GM_addStyle('.slideout-object-left_side { min-width:700px; max-width:775px; width:700px; }')
+    GM_addStyle('.editable-form .form-control, .editable-input .form-control { max-width:unset; }')
+    GM_addStyle('.description-wrapper { width:unset; }')
+    GM_addStyle('.some_class2 { width:720px!important; }')
+    GM_addStyle('.slideout-object-left_side .slideout-object-inner_table div.description-wrapper { max-width:unset; width:725px; }')
+
+    // Show entire iteration name when viewing stories for a feature
+    GM_addStyle('.productgrid-quick-table td.qaSprint, .qaStorySortableListTbl td.qaSprint { overflow:unset; text-overflow:unset; max-width:unset; }')
+    GM_addStyle('.productgrid-quick-table td.qaStoryOwner, .qaStorySortableListTbl td.qaStoryOwner { display:none; width:0 }')
 
 })();
